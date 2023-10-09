@@ -1,0 +1,375 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Homework-9",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:4000",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/movies": {
+      "get": {
+        "tags": [
+          "movie"
+        ],
+        "summary": "http://localhost:4000/movies",
+        "operationId": "http://localhost:4000/movies",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "movie"
+        ],
+        "summary": "http://localhost:4000/movies",
+        "operationId": "Posthttp://localhost:4000/movies",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/httplocalhost4000moviesrequest"
+                  },
+                  {
+                    "example": {
+                      "id": 101,
+                      "title": "Asymmetric Affections",
+                      "genres": "Romance",
+                      "year": 2023
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "id": 101,
+                "title": "Asymmetric Affections",
+                "genres": "Romance",
+                "year": 2023
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/movies/2": {
+      "delete": {
+        "tags": [
+          "movie"
+        ],
+        "summary": "http://localhost:4000/movies/2",
+        "operationId": "http://localhost:4000/movies/2",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/movies/101": {
+      "put": {
+        "tags": [
+          "movie"
+        ],
+        "summary": "http://localhost:4000/movies/2",
+        "operationId": "Puthttp://localhost:4000/movies/2",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/httplocalhost4000movies2request"
+                  },
+                  {
+                    "example": {
+                      "genres": "Romance | Drama",
+                      "id": 101
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "genres": "Romance | Drama",
+                "id": 101
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "http://localhost:4000/users",
+        "operationId": "http://localhost:4000/users",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/register": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "http://localhost:4000/register",
+        "operationId": "http://localhost:4000/register",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/httplocalhost4000registerrequest"
+                  },
+                  {
+                    "example": {
+                      "id": 103,
+                      "email": "daniadjtnk@mail.com",
+                      "gender": "Female",
+                      "password": "12345qwer",
+                      "role": "Tech Educator"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "id": 103,
+                "email": "daniadjtnk@mail.com",
+                "gender": "Female",
+                "password": "12345qwer",
+                "role": "Tech Educator"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "http://localhost:4000/register1",
+        "operationId": "http://localhost:4000/register1",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/httplocalhost4000registerrequest1"
+                  },
+                  {
+                    "example": {
+                      "email": "daniadjtnk@mail.com",
+                      "password": "12345qwer"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "email": "daniadjtnk@mail.com",
+                "password": "12345qwer"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "httplocalhost4000moviesrequest": {
+        "title": "httplocalhost4000moviesrequest",
+        "required": [
+          "id",
+          "title",
+          "genres",
+          "year"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "title": {
+            "type": "string"
+          },
+          "genres": {
+            "type": "string"
+          },
+          "year": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "id": 101,
+          "title": "Asymmetric Affections",
+          "genres": "Romance",
+          "year": 2023
+        }
+      },
+      "httplocalhost4000movies2request": {
+        "title": "httplocalhost4000movies2request",
+        "required": [
+          "genres",
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "genres": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "genres": "Romance | Drama",
+          "id": 101
+        }
+      },
+      "httplocalhost4000registerrequest": {
+        "title": "httplocalhost4000registerrequest",
+        "required": [
+          "id",
+          "email",
+          "gender",
+          "password",
+          "role"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "email": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "id": 103,
+          "email": "daniadjtnk@mail.com",
+          "gender": "Female",
+          "password": "12345qwer",
+          "role": "Tech Educator"
+        }
+      },
+      "httplocalhost4000registerrequest1": {
+        "title": "httplocalhost4000registerrequest1",
+        "required": [
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "email": "daniadjtnk@mail.com",
+          "password": "12345qwer"
+        }
+      }
+    },
+    "securitySchemes": {
+      "httpBearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "security": [
+    {
+      "httpBearer": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "movie"
+    },
+    {
+      "name": "User"
+    }
+  ]
+}
